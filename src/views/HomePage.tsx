@@ -2,7 +2,11 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <>
+    <div className='bg-jgreen h-screen w-screen'>
+        Home Page
+    </div>
+    </>
   )
 }
 
