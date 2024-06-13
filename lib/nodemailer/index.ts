@@ -53,6 +53,7 @@ export async function generateEmailBody(job: any, type: any) {
 
 // mail transporter
 const transporter = nodemailer.createTransport({
+    pool: true,
     service: 'gmail',
     host: "smtp.gmail.com",
     port: 587,
