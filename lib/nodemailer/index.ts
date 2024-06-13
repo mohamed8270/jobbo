@@ -2,7 +2,7 @@
 
 import nodemailer from 'nodemailer';
 import fse from 'fs-extra';
-import { EmailJobInfo, NotificationType } from '@/types';
+import { EmailContent, EmailJobInfo, NotificationType } from '@/types';
 
 // notification type
 const Notification = {
@@ -67,7 +67,7 @@ const transporter = nodemailer.createTransport({
 });
 
 // mail sending
-export const sendMail = async (emailContent: any, sendTo: any) => {
+export const sendMail = async (emailContent: EmailContent, sendTo: string[]) => {
 
     // mail options
     const mailOptions = {
