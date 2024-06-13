@@ -24,6 +24,7 @@ const config: Config = {
         jbgrey: '#fafafa',
         jsgrey: '#f3f3f3',
         jcgrey: '#fafafa',
+        jgreenl: '#f3faf9',
       }
     },
   },

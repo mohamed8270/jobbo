@@ -1,4 +1,5 @@
-import HomePage from "@/src/views/HomePage";
+import HomePage from "@/src/app/HomePage";
+
 
 export default function Home() {
   return (
