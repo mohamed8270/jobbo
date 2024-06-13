@@ -15,10 +15,14 @@ const jobSchema = new mongoose.Schema({
     jobIndustry: {type: String, required: true},
     jobFunction: {type: String, required: true},
     jobRole: [
-        {type: String, required: true},
+        {
+            jobrole: {type: String, required: true},
+        }
     ],
     jobSkillsets: [
-        {type: String, required: true},
+        {
+            jobskills: {type: String, required: true},
+        }
     ],
     jobCompanyUrl: {type: String, required: true},
     jobSource: {type: String, required: true},

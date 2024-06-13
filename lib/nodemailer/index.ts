@@ -2,6 +2,7 @@
 
 import nodemailer from 'nodemailer';
 import fse from 'fs-extra';
+import { EmailJobInfo, NotificationType } from '@/types';
 
 // notification type
 const Notification = {
@@ -23,10 +24,10 @@ const readHTMLContent = async () => {
 }
 
 // mail type accordian
-export async function generateEmailBody(job: any, type: any) {
+export async function generateEmailBody(job: EmailJobInfo, type: NotificationType) {
 
     // shortened title
-    const shortenedTitle = job.jobName.length > 20 ? `${job.jobName.subString(0,20)}` : job.jobName;
+    const shortenedTitle = job.jobName.length > 20 ? `${job.jobName.substring(0,20)}` : job.jobName;
 
     // read HTML content
     const htmlRead = await readHTMLContent();
