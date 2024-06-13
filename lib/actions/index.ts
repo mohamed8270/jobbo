@@ -1,12 +1,52 @@
-import axios from "axios";
+"use server"
 
-export async function getJobsData() {
+import { revalidatePath } from 'next/cache';
+import { connectToDB } from '../mongoose';
+import { scrapeJobData } from '../scraper';
+import JobModel from '../models/job.model';
+
+export async function scrapeAndStoreJobData(joburl: string) {
+    if(!joburl) return true;
+
     try {
-        const jobDatasurl = String(process.env.JOBS_DATA_URL);
-        const joboutput = await axios.get(jobDatasurl);
-        console.log(joboutput);
-        return joboutput;
+        connectToDB();
+        const scrapedJobData = await scrapeJobData(joburl);
+
+        if(!scrapedJobData) return;
+
+        let jobData = scrapedJobData;
+
+        const existingJob = await JobModel.findOne({url: scrapedJobData.url});
+
+        if(existingJob) {
+            const updatedpostedHistory: any = [
+                ...existingJob.postedHistory,
+                {posted: scrapedJobData.jobPostedValue},
+                
+            ]
+
+            const updatedappliedHistory: any = [
+                ...existingJob.appliedHistory,
+                {apply: scrapedJobData.jobAppliedValue},
+            ]
+
+            jobData = {
+                ...scrapedJobData,
+                postedHistory: updatedpostedHistory,
+                appliedHistory: updatedappliedHistory,
+            }
+        }
+
+        const newJobData = await JobModel.findOneAndUpdate(
+            {url: scrapedJobData.url},
+            jobData,
+            {upsert: true, new: true},
+        )
+
+        revalidatePath(`/jobs/${newJobData._id}`);
+
+        
     } catch (error) {
-        throw new Error(`${error}`);
+       throw new Error(`Failed to create or update product: ${error}`);
     }
-} 
+}

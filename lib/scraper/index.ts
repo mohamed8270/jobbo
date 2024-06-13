@@ -7,7 +7,7 @@ import * as cheerio from "cheerio";
 import {extractJobDataSpace, extractJobDataComma, extractCommaSeparated} from '../utils/utils';
 import {extractPostData, extractViewsData, extractAppliedData, extractJobID, extractJobIndexData} from '../utils/scraper_extract';
 
-const scrapeJobData = async (url: string) => {
+export async function scrapeJobData(url: string) {
     if(!url) return;
 
     const username = String(process.env.BRIGHT_DATA_USERNAME);
@@ -115,5 +115,3 @@ const scrapeJobData = async (url: string) => {
         throw new Error(`Scraper error ${error.message}`);
     }
 };
-
-module.exports = scrapeJobData;
