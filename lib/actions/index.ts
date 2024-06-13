@@ -50,3 +50,14 @@ export async function scrapeAndStoreJobData(joburl: string) {
        throw new Error(`Failed to create or update product: ${error}`);
     }
 }
+
+export async function getAllJobsData() {
+    try {
+        connectToDB();
+        const output = await JobModel.find();
+
+        return output;
+    } catch (error) {
+        throw new Error(`${error}`);
+    }
+}
