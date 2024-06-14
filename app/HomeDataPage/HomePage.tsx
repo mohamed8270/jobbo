@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from '../components/NavBar'
-import HeroSection from '../components/HeroSection'
+import NavBar from '../../src/components/NavBar'
+import HeroSection from '../../src/components/HeroSection'
 
 const HomePage = () => {
   return (
