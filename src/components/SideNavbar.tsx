@@ -23,7 +23,7 @@ const SideNavbar = () => {
                     <Link key={data.text} href={data.path}>
                         <div className={`h-[50px] py-[10px] flex items-center rounded-r-md my-[10px] ${pathname == data.path ? 'bg-jgreenl': 'bg-jwhite'}`}>
                             <div className={`h-[50px] w-[4px] rounded-md mr-[20px] ${pathname === data.path ? 'bg-jgreen': 'bg-jwhite'}`}></div>
-                            <Image src={pathname === data.path ? data.svgfil : data.svg} alt={data.text} height={20} width={20} className='mr-[10px]'/>
+                            <Image src={pathname === data.path ? data.svgfil : data.svg} alt={data.text} height={pathname === data.path ? 23 : 20} width={pathname === data.path ? 23 : 20} className='mr-[10px]'/>
                             <h1 className={`text-[12px] ${pathname === data.path ? 'font-bold text-jgreen' : 'font-semibold text-jblack'}`}>{data.text}</h1>
                         </div>
                     </Link>
