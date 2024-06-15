@@ -8,8 +8,8 @@ const page = async () => {
   const jobsData = await getAllJobsData();
 
   return (
-    <section>
-        <div className=' bg-jbgrey pt-[80px] pl-[40px] pr-[40px]'>
+    <section className='flex flex-col gap-10'>
+        <div className='bg-jbgrey pt-[80px] pl-[40px] pr-[40px] min-h-screen'>
           <SearchJobsData/>
           <div className='flex flex-wrap gap-x-12 gap-y-16'>
             {jobsData?.map((jobs) => (
