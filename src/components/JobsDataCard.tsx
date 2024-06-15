@@ -17,7 +17,7 @@ export const JobsDataCard = ({jobs}: Props) => {
             <div className='flex items-center gap-[10px]'>
                 <Image src={img} alt='logo' height={40} width={40}/>
                 <div className='flex flex-col gap-[2px]'>
-                    <h1 className='font-poppins text-[18px] font-semibold text-jblack'>{jobs.jobName}</h1>
+                    <h1 className='font-poppins text-[18px] font-semibold text-jblack line-clamp-1'>{jobs.jobName}</h1>
                     <p className='font-poppins text-[12px] font-medium text-jblack opacity-40'>{jobs.jobCompany}</p>
                 </div>
             </div>

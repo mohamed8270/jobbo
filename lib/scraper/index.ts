@@ -60,11 +60,11 @@ export async function scrapeJobData(url: string) {
 
         const jobfunction = extractJobDataSpace($('#jobInfo div:eq(8) a'));
 
-        const jobrole = extractCommaSeparated($,'#jobInfo div:eq(12) a');
+        const jobrole = extractCommaSeparated($,'#jobInfo div:eq(11) a');
         // console.log(jobroles);
         // const jobrole = Object.keys(JSON.parse(jobroles));
 
-        const jobskillset = extractCommaSeparated($,'#jobInfo div:eq(16) a');
+        const jobskillset = extractCommaSeparated($,'#jobInfo div:eq(15) a');
         // console.log(jobskillsets);
         // const jobskillset = Object.keys(JSON.parse(jobskillsets));
 

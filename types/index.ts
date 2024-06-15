@@ -1,10 +1,10 @@
-export type jobroleItem = {
-    jobrole: string,
-}
+// export type jobroleItem = {
+//     jobrole: string,
+// }
 
-export type jobskillsItem = {
-    jobskills: string,
-}
+// export type jobskillsItem = {
+//     jobskills: string,
+// }
 
 export type postedHistoryItem = {
     posted: number,
@@ -36,8 +36,8 @@ export type Jobs = {
     jobType: string,
     jobIndustry: string,
     jobFunction: string,
-    jobRole: jobroleItem[] | [],
-    jobSkillsets: jobskillsItem[] | [],
+    jobRole: string[] | [],
+    jobSkillsets: string[] | [],
     jobCompanyUrl: string,
     jobSource: string,
     jobApply: string,
