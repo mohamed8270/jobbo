@@ -47,7 +47,7 @@ export async function scrapeAndStoreJobData(joburl: string) {
 
         
     } catch (error) {
-       throw new Error(`Failed to create or update product: ${error}`);
+       throw new Error(`${error}`);
     }
 }
 

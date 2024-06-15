@@ -33,7 +33,7 @@ export async function scrapeJobData(url: string) {
         const $ = cheerio.load(response.data);
 
         const jobtitle = $('#titleSection h1').text().trim();
-        console.log(jobtitle);
+        // console.log(jobtitle);
 
         const jobcompany = extractJobDataSpace($('#titleSection a'));
 
@@ -61,8 +61,12 @@ export async function scrapeJobData(url: string) {
         const jobfunction = extractJobDataSpace($('#jobInfo div:eq(8) a'));
 
         const jobrole = extractCommaSeparated($,'#jobInfo div:eq(12) a');
+        // console.log(jobroles);
+        // const jobrole = Object.keys(JSON.parse(jobroles));
 
         const jobskillset = extractCommaSeparated($,'#jobInfo div:eq(16) a');
+        // console.log(jobskillsets);
+        // const jobskillset = Object.keys(JSON.parse(jobskillsets));
 
         const jobcompanylink = 'https://www.foundit.in' + $('#titleSection a').attr('href');
 
