@@ -19,7 +19,7 @@ const JobsAnalyticsCard = ({href, icn, txt1, txt2, txt3, percentage} : Props) =>
                 <h1 className='text-jblack font-semibold text-[12px]'>{txt1}</h1>
                 <div className='flex gap-[10px]'>
                     <Image src={icn} alt='logo' height={22} width={22} className='fill-jblack text-jblack'/>
-                    <h1 className='text-[22px] font-normal text-jblack my-[5px]'>{txt2}</h1>
+                    <h1 className='text-[22px] font-normal text-jblack my-[5px] line-clamp-1'>{txt2}</h1>
                 </div>
                 <div className='flex justify-between items-center my-[7px] gap-[20px]'>
                     <div className='flex items-center gap-[5px]'>

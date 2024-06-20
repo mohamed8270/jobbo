@@ -1,39 +1,71 @@
+import { Jobs } from "@/types";
 
-// job viewed average extract
-export function extractJobviewsAverage(data: any) {
-    if(!data) return 0;
-    let totalviews = 0;
+// -------- jobs view, apply, high pay, low pay -----------------------------------
 
-    {data?.map((jobdata: any) => {
-        var viewarr = [jobdata.jobViewsValue];
-        for(var i=0; i <= viewarr.length; i++) {
-            if(viewarr[i] >= 30) {
-                totalviews += viewarr[i];
-            }
-        }
-    })}
-    return totalviews || 0;
-}
+// job viewed extract
+export function extractJobviewsAverage(jobsData: Jobs[]): number {
+    if (!jobsData || !jobsData.length) return 0; // Handle empty or undefined data
+    let totalViews = 0;
+  
+    for (const jobData of jobsData) {
+      const viewValue = jobData.jobViewsValue; // Access jobViewsValue directly
+      if (viewValue && viewValue >= 30) { // Check for existence and minimum value
+        totalViews += viewValue;
+      }
+    }
+  
+    return totalViews;
+  }
+  
 
-// job applied average extract
-export function extractJobappliedAverage(data: any) {
-    if(!data) return 0;
+// job applied extract
+export function extractJobappliedAverage(jobsData: Jobs[]) {
+    if(!jobsData || !jobsData.length) return 0;
     let totalapply = 0;
 
-    {data?.map((jobdata: any) => {
-        var applyarr = [jobdata.jobAppliedValue];
-        
-        for(var i=0; i <= applyarr.length; i++) {
-            if(applyarr[i] >= 50) {
-                totalapply += applyarr[i];
-                // console.log(applyarr[i]);
-            }
+    for(const jobdata of jobsData) {
+        const applyvalue = jobdata.jobAppliedValue;
+        if(applyvalue && applyvalue >= 50) {
+            totalapply += applyvalue;
         }
-        // console.log(totalapply);
-    })}
-    // console.log(totalapply);
+    }
+
     return totalapply || 0;
 }
+
+// job high paid data extract
+export function extractJobHighpay(jobsdata: Jobs[]) {
+    if(!jobsdata || !jobsdata.length)  return 0;
+    let totalamount = '0';
+ 
+    for(const jobdata of jobsdata) {
+        var highvalue = Number(jobdata.jobSalary.replace(/\D/g,''));
+        if(highvalue && highvalue >= 50000) {
+            totalamount = jobdata.jobSalary;
+        }
+    }
+    return totalamount || '0';
+}
+
+// job low paid data extract
+export function extractJoblowpay(jobsdata: Jobs[]) {
+    if(!jobsdata || !jobsdata.length)  return 0;
+    let totalamount = '0';
+    
+    for(const jobdata of jobsdata){
+        var lowvalue = Number(jobdata.jobSalary.replace(/\D/g,''));
+        if(lowvalue <= 50000) {
+            totalamount = jobdata.jobSalary;
+        }
+    }
+    return totalamount || '0';
+}
+
+
+
+
+
+// ------- jobs data count per job ------------------------------------
 
 // job views count data extract
 export function extractJobviewsCount(data: any) {
@@ -67,17 +99,9 @@ export function extractJobapplyCount(data: any) {
     return totalcount || 0;
 }
 
-// job high paid data extract
-export function extractJobHighpay(data: any) {
-    if(!data)  return 0;
-    let totalamount = 0;
-    {data?.map((jobsal: any) => {
-        var highpayarr = [jobsal.jobSalary.replace(/\D/g,'')];
-        for(var i=0; i <= highpayarr.length; i++) {
-            if(highpayarr[i] >= 50000) {
-                totalamount += highpayarr[i];
-            }
-        }
-    })}
-    return totalamount || 0;
+
+
+// job percentage data extract
+export function extractPercent(data: any) {
+    
 }
