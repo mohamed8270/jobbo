@@ -6,7 +6,7 @@ interface Props {
     href: string,
     icn: string,
     txt1: string,
-    txt2: string,
+    txt2: any,
     percentage: string,
 }
 
