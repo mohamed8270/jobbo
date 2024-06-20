@@ -51,6 +51,7 @@ export async function scrapeAndStoreJobData(joburl: string) {
     }
 }
 
+// get all jobs data from mongodb
 export async function getAllJobsData() {
     try {
         connectToDB();
@@ -61,3 +62,5 @@ export async function getAllJobsData() {
         throw new Error(`${error}`);
     }
 }
+
+// 
