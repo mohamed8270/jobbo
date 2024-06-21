@@ -1,10 +1,13 @@
 import { getAllJobsData } from '@/lib/actions'
 import { extractJobappliedAverage, extractJobapplyCount, extractJobHighpay, extractJoblowpay, extractJobviewsAverage, extractJobviewsCount } from '@/lib/utils/jobs_analytics';
+import  {JobDataGraph}  from '@/src/components/graph_data/JobDataGraph';
 import JobsAnalyticsCard from '@/src/components/JobsAnalyticsCard'
 import React from 'react'
 
 const Page = async () => {
   const jobsdata = await getAllJobsData();
+
+  const jobsdatagraph = jobsdata.map((items) => items);
 
   return (
     <div className='h-screen bg-jbgrey pt-[80px] pl-[40px] pr-[40px] min-h-screen'>
@@ -15,8 +18,8 @@ const Page = async () => {
           <JobsAnalyticsCard href='/' icn='https://www.svgrepo.com/show/533596/arrow-narrow-circle-broken-down-left.svg' txt1='Low paid' txt2={extractJoblowpay(jobsdata)} txt3='' percentage='3.8%' />
           <JobsAnalyticsCard href='/' icn='https://www.svgrepo.com/show/533306/send.svg' txt1='Most applied' txt2={extractJobappliedAverage(jobsdata)} txt3={extractJobapplyCount(jobsdata)} percentage='3.8%' />
         </div>
-        <div className='py-[40px]'>
-          graph
+        <div className='py-[40px] h-[400px] w-[550px]'>
+          <JobDataGraph ChartData={jobsdatagraph} />
         </div>
       </div>
     </div>
