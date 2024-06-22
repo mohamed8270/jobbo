@@ -11,7 +11,7 @@ const page = async () => {
     <section className='flex flex-col gap-10'>
         <div className='bg-jbgrey pt-[80px] pl-[40px] pr-[40px] min-h-screen'>
           <SearchJobsData/>
-          <div className='flex flex-wrap gap-x-12 gap-y-16'>
+          <div className='flex flex-wrap gap-x-12 md:gap-y-16 gap-y-6'>
             {jobsData?.map((jobs) => (
               <JobsDataCard key={jobs._id} jobs={jobs} />
             ))}

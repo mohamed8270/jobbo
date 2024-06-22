@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { navLinks } from '@/constants/static';
 import React from 'react'
@@ -11,7 +11,7 @@ const SideNavbar = () => {
     const pathname = usePathname();
     const imglink = 'https://img.freepik.com/premium-vector/leaf-nature-logo-concept-template_535345-155.jpg';
   return (
-    <div className='bg-jwhite font-poppins h-screen top-0 left-0 fixed w-[260px] border-r-[2px] border-jsgrey'>
+    <div className='bg-jwhite font-poppins h-screen top-0 left-0 fixed w-[260px] border-r-[2px] border-jsgrey invisible md:visible'>
         <div className='flex flex-col py-[20px] px-[30px]'>
             <div className='flex items-center gap-[15px]'>
                 <img src={imglink} alt="logo" height={40} width={40} />
