@@ -63,4 +63,15 @@ export async function getAllJobsData() {
     }
 }
 
-// 
+// get jobs by id
+export async function getJobsDetails(id: string) {
+    try {
+        connectToDB();
+
+        const jobs = await JobModel.findOne({_id: id});
+        if(!jobs) return null;
+        return jobs;
+    } catch (error) {
+        throw new Error(`${error}`);
+    }
+}
