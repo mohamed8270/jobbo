@@ -6,7 +6,7 @@ import Image from 'next/image';
 import JobsInfoCard from '@/src/components/JobsInfoCard';
 import Link from 'next/link';
 import WelComeMailModal from '@/src/components/modals/WelMailModal';
-import { JobDetailsInfoCard } from '@/src/components/interface/JobDetailsInfoCard';
+import { JobDetailsInfoCard, JobDetailsInfoSkills } from '@/src/components/interface/JobDetailsInfoCard';
 
 type Props = {
     params: {id: string},
@@ -23,7 +23,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
     <div className='bg-jwhite min-h-screen font-poppins'>
         <div className='pt-[100px]'>
             <div className='lg:flex justify-between items-center sticky top-5 bg-jwhite lg:px-[40px] px-[20px]'>
-                <div className='flex justify-center items-center gap-[20px]'>
+                <div className='flex justify-start items-center gap-[20px]'>
                     <Image src={img} alt='logo' height={80} width={80}/>
                     <div>
                         <h1 className='lg:text-[42px] text-jblack font-normal'>{job.jobName}</h1>
@@ -53,9 +53,16 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                         <h1 className='text-[14px] font-light text-jblack'>{job.jobExperience}</h1>
                     </div>
                 </div>
-                <div className='text-jblack py-[10px] text-justify text-[12px]'>
+                <div className='text-jblack py-[10px] text-justify text-[12px] pb-[80px]'>
                     <div>{job.jobDescription}</div>
-                    <JobDetailsInfoCard icn='https://www.svgrepo.com/show/507547/briefcase-alt.svg' txt1='JOB TYPE' txt2={job.jobType}  />
+                    <h1 className='text-jblack text-[14px] font-semibold mt-[20px] mb-[10px]'>More Info</h1>
+                    <div className='grid md:justify-start sm:justify-between items-center gap-[20px] sm:grid-cols-2 md:grid-cols-3'>
+                        <JobDetailsInfoCard icn='https://www.svgrepo.com/show/507547/briefcase-alt.svg' txt1='JOB TYPE' txt2={job.jobType} />
+                        <JobDetailsInfoCard icn='https://www.svgrepo.com/show/505362/document-filled.svg' txt1='FUNCTION' txt2={job.jobFunction} />
+                        <JobDetailsInfoCard icn='https://www.svgrepo.com/show/435823/company.svg' txt1='INDUSTRY' txt2={job.jobIndustry} />
+                        <JobDetailsInfoSkills icn='https://www.svgrepo.com/show/20852/brain.svg' txt1='SKILLS' txt2={job.jobSkillsets} />
+                        <JobDetailsInfoSkills icn='https://www.svgrepo.com/show/14441/managers.svg' txt1='JOB ROLES' txt2={job.jobRole} />
+                    </div>
                 </div>
             </div>
         </div>
