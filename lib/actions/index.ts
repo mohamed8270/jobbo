@@ -4,6 +4,8 @@ import { revalidatePath } from 'next/cache';
 import { connectToDB } from '../mongoose';
 import { scrapeJobData } from '../scraper';
 import JobModel from '../models/job.model';
+import { User } from '@/types';
+import { generateEmailBody, sendMail } from '../nodemailer';
 
 export async function scrapeAndStoreJobData(joburl: string) {
     if(!joburl) return true;
@@ -71,6 +73,26 @@ export async function getJobsDetails(id: string) {
         const jobs = await JobModel.findOne({_id: id});
         if(!jobs) return null;
         return jobs;
+    } catch (error) {
+        throw new Error(`${error}`);
+    }
+}
+
+// adding user email to job data
+export async function addUserEmailtoJob(jobId: string, userEmail: string) {
+    try {
+        const job = await JobModel.findById(jobId);
+
+        if(!job) return;
+
+        const userExists = job.users.some((user: User) => user.email === userEmail);
+
+        if(!userExists) {
+            job.users.push({email: userEmail});
+            await job.save();
+            const emailContent = await generateEmailBody(job, "WELCOME");
+            await sendMail(emailContent, [userEmail]);
+        }
     } catch (error) {
         throw new Error(`${error}`);
     }

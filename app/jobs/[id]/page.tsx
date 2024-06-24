@@ -5,6 +5,8 @@ import React from 'react'
 import Image from 'next/image';
 import JobsInfoCard from '@/src/components/JobsInfoCard';
 import Link from 'next/link';
+import WelComeMailModal from '@/src/components/modals/WelMailModal';
+import { JobDetailsInfoCard } from '@/src/components/interface/JobDetailsInfoCard';
 
 type Props = {
     params: {id: string},
@@ -30,6 +32,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                 </div>
                 <div className='flex gap-[20px]'>
                     <button className='font-poppins h-[40px] w-[120px]  text-jblack text-[12px] font-medium rounded-lg hover:text-jblack border-2 border-jsgrey hover:bg-jsgrey'>🔔  Get Notified</button>
+                    {/* <WelComeMailModal jobId={id} /> */}
                     <Link href={job.jobApply}><button className='font-poppins h-[40px] w-[100px] bg-jgreen text-jwhite text-[12px] font-medium rounded-lg hover:text-jgreen hover:border-2 hover:border-jgreen hover:bg-jwhite'>Apply Now</button></Link>
                 </div>
             </div>
@@ -51,7 +54,8 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     </div>
                 </div>
                 <div className='text-jblack py-[10px] text-justify text-[12px]'>
-                    {job.jobDescription}
+                    <div>{job.jobDescription}</div>
+                    <JobDetailsInfoCard icn='https://www.svgrepo.com/show/507547/briefcase-alt.svg' txt1='JOB TYPE' txt2={job.jobType}  />
                 </div>
             </div>
         </div>

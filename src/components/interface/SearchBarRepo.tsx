@@ -33,7 +33,7 @@ export default function SearchBarRepo() {
             <div className='relative'>
                 <input type="text" placeholder='Get job analytics' value={userJobInput} onChange={(e) => setuserJobInput(e.target.value)} className='bg-jsgrey text-[12px] text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] md:w-[400px] sm:w-[380px] pr-[10px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
-                  <Image src="/search.svg" alt="search_svg" width={20} height={20} />
+                  <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
             </div>
             <button type='submit' disabled={userJobInput === ''} className='bg-jblack rounded-lg text-[12px] font-poppins font-medium text-jwhite h-[50px] w-[120px]'>{Loading ? 'Loading..' : 'Get a job'}</button>
@@ -53,7 +53,7 @@ export function SearchJobsData() {
             <div className='relative'>
                 <input type="text" placeholder='Search perfect job' value={userJobsData} onChange={(e) => setuserJobsData(e.target.value)} className='bg-jsgrey text-[12px] text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] lg:w-[800px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
-                  <Image src="/search.svg" alt="search_svg" width={20} height={20} />
+                  <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
             </div>
             <button type='submit' disabled={userJobsData === ''} className='bg-jblack rounded-lg text-[12px] font-poppins font-medium text-jwhite h-[50px] w-[120px]'>Find a Job</button>
