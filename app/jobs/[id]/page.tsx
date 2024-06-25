@@ -53,7 +53,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                         <h1 className='text-[14px] font-light text-jblack'>{job.jobExperience}</h1>
                     </div>
                 </div>
-                <div className='text-jblack py-[10px] text-justify text-[12px] pb-[80px]'>
+                <div className='text-jblack py-[10px] text-justify text-[12px] pb-[20px]'>
                     <div>{job.jobDescription}</div>
                     <h1 className='text-jblack text-[14px] font-semibold mt-[20px] mb-[10px]'>More Info</h1>
                     <div className='grid md:justify-start sm:justify-between items-center gap-[20px] sm:grid-cols-2 md:grid-cols-3'>
@@ -63,6 +63,19 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                         <JobDetailsInfoSkills icn='https://www.svgrepo.com/show/20852/brain.svg' txt1='SKILLS' txt2={job.jobSkillsets} />
                         <JobDetailsInfoSkills icn='https://www.svgrepo.com/show/14441/managers.svg' txt1='JOB ROLES' txt2={job.jobRole} />
                     </div>
+                </div>
+                <div className='pb-[80px]'>
+                    <div className='h-[2px] w-auto bg-jsgrey'></div>
+                    <div className='flex justify-between items-center py-[20px]'>
+                        <div className='flex-row justify-start items-center'>
+                            <Link href={job.jobCompanyUrl} ><div className='text-jgreen text-[14px] font-medium my-[10px]'><span className='text-jblack text-[14px] font-medium'>About</span>  {job.jobCompany}</div></Link>
+                            <Link href={job.jobSource}><div className='text-jgreen text-[12px] font-medium'><span className='text-jblack text-[12px] font-medium'>Source:</span>  {job.jobSource}</div></Link>
+                        </div>
+                        <div>
+                            <button className='font-poppins h-[40px] w-[120px]  text-jgreen text-[12px] font-medium rounded-lg hover:text-jwhite border-2 border-jgreen hover:bg-jgreen'>Follow</button>
+                        </div>
+                    </div>
+                    <div className='h-[2px] w-auto bg-jsgrey'></div>
                 </div>
             </div>
         </div>
