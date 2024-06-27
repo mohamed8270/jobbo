@@ -49,9 +49,9 @@ export function SearchJobsData() {
   const [userJobsData, setuserJobsData] = useState('');
   return  (
     <div>
-        <form className='flex items-center gap-[30px] my-[40px]'>
+        <form className='flex justify-between items-center gap-[30px] my-[40px]'>
             <div className='relative'>
-                <input type="text" placeholder='Search perfect job' value={userJobsData} onChange={(e) => setuserJobsData(e.target.value)} className='bg-jsgrey text-[12px] text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] lg:w-[800px]' />
+                <input type="text" placeholder='Search perfect job' value={userJobsData} onChange={(e) => setuserJobsData(e.target.value)} className='bg-jsgrey text-[12px] text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] lg:w-[900px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
                   <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
