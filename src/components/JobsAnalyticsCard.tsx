@@ -14,7 +14,7 @@ interface Props {
 const JobsAnalyticsCard = ({href, icn, txt1, txt2, txt3, percentage} : Props) => {
   return (
     <Link href={href}>
-        <div className='h-[120px] w-full md:w-[260px] bg-jwhite border-2 border-jsgrey rounded-lg font-poppins'>
+        <div className='h-[120px] w-full md:w-[260px] my-[20px] md:my-[0px] bg-jwhite border-2 border-jsgrey rounded-lg font-poppins'>
             <div className='flex flex-col justify-center items-start m-[10px]'>
                 <h1 className='text-jblack font-semibold text-[12px]'>{txt1}</h1>
                 <div className='flex gap-[10px]'>
