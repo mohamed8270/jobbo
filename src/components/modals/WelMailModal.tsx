@@ -99,8 +99,7 @@ const WelComeMailModal = ({jobId}: Props) => {
                             className='flex-1 pl-1 border-none text-gray-500 text-[12px] font-normal focus:outline-none border border-gray-300 rounded-[27px] shadow-xs' />
                         </div>
 
-                        <button type="submit"
-                        className='px-5 py-3 text-jwhite text-base font-medium border border-secondary bg-jblack rounded-lg mt-8'>{isSubmitting ? 'Submitting..' : 'Submit'}</button>
+                        <button type="submit" className='px-5 py-3 text-jwhite text-base font-medium border border-secondary bg-jblack rounded-lg mt-8'>{isSubmitting ? 'Loading' : 'Submit'}</button>
                     </form>
                 </div>
             </Transition.Child>
