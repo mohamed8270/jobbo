@@ -41,7 +41,7 @@ const WelComeMailModal = ({jobId}: Props) => {
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" onClose={closeModal} className='fixed inset-0 z-10 overflow-y-auto bg-black bg-opacity-60 font-poppins'>
         <div className='min-h-screen px-0 text-center'>
-            <Transition.Child
+            {/* <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
             enterFrom="opacity-0"
@@ -50,7 +50,7 @@ const WelComeMailModal = ({jobId}: Props) => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0">
                 <Dialog.Overlay className='fixed inset-0'/>
-            </Transition.Child>
+            </Transition.Child> */}
 
             <span className='inline-block h-screen align-middle' aria-hidden="true"/>
 
@@ -78,7 +78,7 @@ const WelComeMailModal = ({jobId}: Props) => {
                             onClick={closeModal}/>
                         </div>
                         <h4 className='text-jblack font-poppins text-lg leading-[24px] font-semibold mt-4'>Stay updated with jobs alerts right in your inbox</h4>
-                        <p className='text-gray-600 mt-2 font-poppins font-light text-sm'>Never miss a bargain with our timely alerts!</p>
+                        <p className='text-gray-600 mt-2 font-poppins font-light text-[12px]'>Never miss a bargain with our timely alerts!</p>
                       </div>
 
                     <form className='flex flex-col mt-5' onSubmit={handleSubmit}>
@@ -95,12 +95,12 @@ const WelComeMailModal = ({jobId}: Props) => {
                             id="email" 
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Enter you email address"
-                            className='flex-1 pl-1 border-none text-gray-500 text-base focus:outline-none border border-gray-300 rounded-[27px] shadow-xs' />
+                            placeholder="gmail.com"
+                            className='flex-1 pl-1 border-none text-gray-500 text-[12px] font-normal focus:outline-none border border-gray-300 rounded-[27px] shadow-xs' />
                         </div>
 
                         <button type="submit"
-                        className='px-5 py-3 text-jwhite text-base font-semibold border border-secondary bg-jblack rounded-lg mt-8'>{isSubmitting ? 'Submitting..' : 'Track'}</button>
+                        className='px-5 py-3 text-jwhite text-base font-medium border border-secondary bg-jblack rounded-lg mt-8'>{isSubmitting ? 'Submitting..' : 'Submit'}</button>
                     </form>
                 </div>
             </Transition.Child>

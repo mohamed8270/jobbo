@@ -31,8 +31,8 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     </div>
                 </div>
                 <div className='flex gap-[20px]'>
-                    <button className='font-poppins h-[40px] w-[120px]  text-jblack text-[12px] font-medium rounded-lg hover:text-jblack border-2 border-jsgrey hover:bg-jsgrey'>🔔  Get Notified</button>
-                    {/* <WelComeMailModal jobId={id} /> */}
+                    {/* <button className='font-poppins h-[40px] w-[120px]  text-jblack text-[12px] font-medium rounded-lg hover:text-jblack border-2 border-jsgrey hover:bg-jsgrey'>🔔  Get Notified</button> */}
+                    <WelComeMailModal jobId={id} />
                     <Link href={job.jobApply}><button className='font-poppins h-[40px] w-[100px] bg-jgreen text-jwhite text-[12px] font-medium rounded-lg hover:text-jgreen hover:border-2 hover:border-jgreen hover:bg-jwhite'>Apply Now</button></Link>
                 </div>
             </div>
