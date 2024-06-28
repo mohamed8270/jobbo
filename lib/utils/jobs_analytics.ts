@@ -109,7 +109,7 @@ export function extractPercent(data: any) {
 // popularity score 
 export function extractPopularity(data: any) {
     let views = data.jobViewsValue;
-    let posted = data.jobPostedValue;
+    let posted = data.jobPostedValue === 0 ? 0 : data.jobPostedValue;
     let applied = data.jobAppliedValue;
     // console.log(views,posted,applied);
     const k = 2;

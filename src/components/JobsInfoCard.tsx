@@ -16,7 +16,7 @@ const JobsInfoCard = ({txt1, txt2, txt3, style}: Props) => {
     <div className={`flex items-center gap-[5px] ${style}`}>
         <div className='h-[37px] w-[100px] bg-jsgrey flex items-center justify-center font-poppins gap-[3px] rounded-md'>
             <Image src={icn1} alt={txt1} height={17} width={17} className='fill-jblack text-jblack'/>
-            <p className='text-[10px] font-semibold text-jblack'>{txt1}</p>
+            <p className='text-[10px] font-semibold text-jblack'>{txt1 === '' ? '1 day ago' : txt1}</p>
         </div>
         <div className='h-[37px] w-[100px] bg-jsgrey flex items-center justify-center font-poppins gap-[3px] rounded-md'>
             <Image src={icn2} alt={txt2} height={17} width={17} className='fill-jblack text-jblack'/>
