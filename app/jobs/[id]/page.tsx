@@ -8,6 +8,7 @@ import Link from 'next/link';
 import WelComeMailModal from '@/src/components/modals/WelMailModal';
 import { JobDetailsInfoCard, JobDetailsInfoSkills } from '@/src/components/interface/JobDetailsInfoCard';
 import { extractPopularity } from '@/lib/utils/jobs_analytics';
+import { JobpopularityAnalytics } from '@/src/components/JobsAnalyticsCard';
 
 type Props = {
     params: {id: string},
@@ -43,7 +44,8 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     <h1 className='text-[16px] font-light text-jgreen'>$ {job.jobSalary === '' ? 'Not specified' : job.jobSalary} <span className='text-[12px] font-light text-jblack text-opacity-40'>/per annum</span></h1>
                 </div>
                 <JobsInfoCard txt1={job.jobPosted} txt2={job.jobViews} txt3={job.jobApplied} style='gap-4' />
-                <div className='mt-[40px] flex gap-[10px] items-center'>
+                <JobpopularityAnalytics txt={extractPopularity(job)} quickapply={job.jobQuickApply}/>
+                <div className='mt-[30px] flex gap-[10px] items-center'>
                     <div className='flex gap-[10px]'>
                         <Image src='https://www.svgrepo.com/show/532539/location-pin.svg' alt='location' height={15} width={15}/>
                         <h1 className='text-[14px] font-light text-jblack'>{job.jobPlace}</h1>
@@ -69,14 +71,13 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     <div className='h-[2px] w-auto bg-jsgrey'></div>
                     <div className='flex justify-between items-center py-[20px]'>
                         <div className='flex-row justify-start items-center'>
-                            <Link href={job.jobCompanyUrl} ><div className='text-jgreen text-[14px] font-medium my-[10px]'><span className='text-jblack text-[14px] font-medium'>About</span>  {job.jobCompany}</div></Link>
+                            <Link href={job.jobCompanyUrl} ><div className='text-jgreen text-[14px] font-medium my-[10px]'><span className='text-jblack text-[14px] font-medium'>About</span>  {job.jobCompany === '' ? 'Confidential' : job.jobCompany}</div></Link>
                             <Link href={job.jobSource === '' ? job.jobCompanyUrl : job.jobSource}><div className='text-jgreen text-[12px] font-medium'><span className='text-jblack text-[12px] font-medium'>Source:</span>  {job.jobSource === '' ? 'Visit official' : job.jobSource}</div></Link>
                         </div>
                         <div>
                             <button className='font-poppins h-[40px] w-[120px]  text-jgreen text-[12px] font-medium rounded-lg hover:text-jwhite border-2 border-jgreen hover:bg-jgreen'>Follow</button>
                         </div>
                     </div>
-                    <div className='text-[22px] w-auto text-jblack'>{extractPopularity(job)}</div>
                 </div>
             </div>
         </div>

@@ -119,5 +119,5 @@ export function extractPopularity(data: any) {
     const second = posted + 1;
 
     const popularityscore = first / second;
-    return popularityscore.toFixed(4) || 0;
+    return popularityscore.toFixed(2) || 0;
 }

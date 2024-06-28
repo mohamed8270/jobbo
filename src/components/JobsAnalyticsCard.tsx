@@ -37,3 +37,39 @@ const JobsAnalyticsCard = ({href, icn, txt1, txt2, txt3, percentage} : Props) =>
 }
 
 export default JobsAnalyticsCard
+
+
+interface Props2 {
+    txt: any,
+    quickapply: string,
+}
+
+export function JobpopularityAnalytics({txt, quickapply}: Props2) {
+    return <div className='h-[60px] w-full bg-indigo-600 flex justify-between items-center gap-[10px] mt-[10px] rounded-lg  px-[10px] font-poppins'>
+            <div className='flex items-center gap-[10px]'>
+                <div className='h-[30px] w-[4px] bg-jwhite rounded-md'></div>
+                <h1 className='md:text-[14px] text-[12px] text-jwhite font-normal'>{txt}% <span className='ml-[3px]'> {Emojitxt(txt)}</span></h1>
+            </div>
+            <div>
+                <Link href={quickapply}><button className='h-[30px] w-[100px] bg-jwhite rounded-full text-[10px] font-medium text-jblack'>Quick Apply</button></Link>
+            </div>
+            </div>
+}
+
+interface Props3 {
+    txt1: number,
+}
+export function Emojitxt({txt1}: Props3) {
+    console.log(txt1);
+    if (Number(txt1) >= 20) {
+        return 'Begginers choice 🙂';
+    } else if (Number(txt1) >= 50) {
+        return 'Freshers favourite 😊';
+    } else if (Number(txt1) >= 70) {
+        return 'Intermediate dev 🤗';
+    } else if (Number(txt1) >= 100) {
+        return 'Top tier 😎';
+    } else {
+        return 'peoples choice 👍';
+    }
+}
