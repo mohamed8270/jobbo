@@ -105,3 +105,8 @@ export function extractJobapplyCount(data: any) {
 export function extractPercent(data: any) {
     
 }
+
+// popularity score 
+export function extractPopularity(data: any) {
+    
+}

@@ -12,7 +12,12 @@ export type postedHistoryItem = {
 }
 
 export type appliedHistoryItem = {
-    posted: number,
+    apply: number,
+    Date: string,
+}
+
+export type viewsHistoryItem = {
+    views: number,
     Date: string,
 }
 
@@ -47,6 +52,7 @@ export type Jobs = {
     jobViewsValue: number,
     postedHistory: postedHistoryItem[] | [],
     appliedHistory: appliedHistoryItem[] | [],
+    viewsHistory: viewsHistoryItem[] | [],
     users?: User[],
     timestamps: string,
 }

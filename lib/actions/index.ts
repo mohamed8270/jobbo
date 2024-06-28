@@ -32,10 +32,16 @@ export async function scrapeAndStoreJobData(joburl: string) {
                 {apply: scrapedJobData.jobAppliedValue},
             ]
 
+            const updatedviewsHistory: any = [
+                ...existingJob.viewsHistory,
+                {views: scrapedJobData.jobViewsValue}
+            ]
+
             jobData = {
                 ...scrapedJobData,
                 postedHistory: updatedpostedHistory,
                 appliedHistory: updatedappliedHistory,
+                viewsHistory: updatedviewsHistory,
             }
         }
 

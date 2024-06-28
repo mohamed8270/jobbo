@@ -109,6 +109,7 @@ export async function scrapeJobData(url: string) {
             jobViewsValue: jobviewsnumber || 0,
             postedHistory: [],
             appliedHistory: [],
+            viewsHistory: [],
         };
 
         console.log(data);
