@@ -7,6 +7,7 @@ import JobsInfoCard from '@/src/components/JobsInfoCard';
 import Link from 'next/link';
 import WelComeMailModal from '@/src/components/modals/WelMailModal';
 import { JobDetailsInfoCard, JobDetailsInfoSkills } from '@/src/components/interface/JobDetailsInfoCard';
+import { extractPopularity } from '@/lib/utils/jobs_analytics';
 
 type Props = {
     params: {id: string},
@@ -75,7 +76,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                             <button className='font-poppins h-[40px] w-[120px]  text-jgreen text-[12px] font-medium rounded-lg hover:text-jwhite border-2 border-jgreen hover:bg-jgreen'>Follow</button>
                         </div>
                     </div>
-                    <div className='h-[2px] w-auto bg-jsgrey'></div>
+                    <div className='text-[22px] w-auto text-jblack'>{extractPopularity(job)}</div>
                 </div>
             </div>
         </div>
