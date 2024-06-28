@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Jobs } from '@/types';
 import Image from 'next/image';
 import JobsInfoCard from './JobsInfoCard';
+import { extractPopularity } from '@/lib/utils/jobs_analytics';
 
 interface Props {
     jobs: Jobs,
@@ -22,6 +23,12 @@ export const JobsDataCard = ({jobs}: Props) => {
                 </div>
             </div>
             <JobsInfoCard txt1={jobs.jobPosted} txt2={jobs.jobViews} txt3={jobs.jobApplied} style='justify-between' />
+            {Number(extractPopularity(jobs)) >= 60 ? 
+                <div className='h-[37px] w-full bg-indigo-600 rounded-md flex justify-start items-center'>
+                    <div className='h-[20px] w-[4px] bg-jwhite rounded-md ml-[5px]'></div>
+                    <div className=' text-jwhite text-[12px] font-normal pl-[10px]'>{extractPopularity(jobs)}% most peoples choice 🔥</div>
+                </div> : null
+            }
             <div className='my-[10px]'>
                 <h1 className='font-poppins text-[11px] font-medium text-jblack opacity-50 leading-5 text-justify line-clamp-6'>{jobs.jobDescription}</h1>
             </div>
