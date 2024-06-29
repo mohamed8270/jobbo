@@ -1,11 +1,3 @@
-// export type jobroleItem = {
-//     jobrole: string,
-// }
-
-// export type jobskillsItem = {
-//     jobskills: string,
-// }
-
 export type postedHistoryItem = {
     posted: number,
     Date: string,
@@ -54,7 +46,6 @@ export type Jobs = {
     appliedHistory: appliedHistoryItem[] | [],
     viewsHistory: viewsHistoryItem[] | [],
     users?: User[],
-    timestamps: string,
 }
 
 export type EmailJobInfo = {
@@ -63,7 +54,11 @@ export type EmailJobInfo = {
 };
 
 export type NotificationType =
-| "WELCOME";
+    | "WELCOME"
+    | "POPULAR"
+    | "VIEWS"
+    | "APPLY"
+    | "POSTED"
 
 export type EmailContent = {
     subject: string;
