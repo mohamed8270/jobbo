@@ -35,6 +35,12 @@ const jobSchema = new mongoose.Schema({
             Date: {type: Date, default: Date.now},
         }
     ],
+    viewsHistory: [
+        {
+            views: {type: Number, required: true},
+            Date: {type: Date, default: Date.now},
+        }
+    ],
     users: [
         {
             email: {type: String, required: true},
