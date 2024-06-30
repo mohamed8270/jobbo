@@ -27,9 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
-        <div className="flex   flex-col md:flex-row min-h-screen">
+        <div className="flex">
           <SideNavbar/>
-          <div className="md:w-full md:ml-[260px] w-full">
+          <div className="md:w-full md:ml-[260px]">
             <NavBar/>
             <main className="flex-grow w-full">{children}</main>
             <BottomNavBar/>
