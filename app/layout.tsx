@@ -10,7 +10,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Jobbo",
   description: "Uncover your perfect job opportunity!",
-  viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
 };
 
 export default function RootLayout({
@@ -20,12 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        {/* You can add other meta tags or link tags here if needed */}
-      </head>
-      <body className={`${inter.className} min-h-screen`}>
+      <body className={inter.className}>
         <div className="flex">
           <SideNavbar/>
           <div className="md:w-full md:ml-[260px]">
