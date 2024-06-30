@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SideNavbar from "@/src/components/interface/SideNavbar";
@@ -33,10 +33,3 @@ export default function RootLayout({
   );
 }
 
-
-export const viewport: Viewport = {
-  themeColor: "#099f84",
-  initialScale: 1,
-  width: "device-width",
-  maximumScale: 1,
-};

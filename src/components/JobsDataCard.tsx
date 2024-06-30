@@ -16,7 +16,7 @@ export const JobsDataCard = ({jobs}: Props) => {
     <Link href={`/jobs/${jobs._id}`} className='sm:w-[340px] sm:max-[340px] flex-1 flex flex-col gap-[20px] rounded-lg font-poppins'>
         <div className='sm:w-[340px] flex-1 flex flex-col relative gap-[25px] p-[15px] rounded-xl bg-jwhite border-2 border-jsgrey'>
             <div className='flex items-center gap-[10px]'>
-                <Image src={img} alt='logo' height={40} width={40}/>
+                <Image src={img} alt='company_logo' height={40} width={40}/>
                 <div className='flex flex-col gap-[2px]'>
                     <h1 className='font-poppins text-[18px] font-semibold text-jblack line-clamp-1'>{jobs.jobName}</h1>
                     <p className='font-poppins text-[12px] font-medium text-jblack opacity-40 line-clamp-1'>{jobs.jobCompany === '' ? 'Company Name Confidential' : jobs.jobCompany}</p>
