@@ -24,7 +24,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
   return (
     <div className='bg-jwhite min-h-screen font-poppins'>
         <div className='pt-[100px]'>
-            <div className='lg:flex justify-between items-center sticky top-5 bg-jwhite lg:px-[40px] px-[20px]'>
+            <div className='lg:flex justify-between items-center sticky top-5 bg-jwhite lg:px-[40px] px-[10px]'>
                 <div className='flex justify-start items-center gap-[20px]'>
                     <Image src={img} alt='logo' height={80} width={80}/>
                     <div>
@@ -38,7 +38,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     <Link href={job.jobApply}><button className='font-poppins h-[40px] w-[100px] bg-jgreen text-jwhite text-[12px] font-medium rounded-lg hover:text-jgreen hover:border-2 hover:border-jgreen hover:bg-jwhite'>Apply Now</button></Link>
                 </div>
             </div>
-            <div className='mt-[40px] lg:mx-[40px] mx-[20px]'>
+            <div className='mt-[40px] lg:mx-[40px] mx-[10px]'>
                 <div className='flex items-center gap-[10px] my-[10px]'>
                     <div className='h-[30px] w-[5px] bg-jgreen rounded-r-md'></div>
                     <h1 className='text-[16px] font-light text-jgreen'>$ {job.jobSalary === '' ? 'Not specified' : job.jobSalary} <span className='text-[12px] font-light text-jblack text-opacity-40'>/per annum</span></h1>

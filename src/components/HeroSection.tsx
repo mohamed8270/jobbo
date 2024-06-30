@@ -5,7 +5,7 @@ const HeroSection = () => {
     const img = 'https://cdni.iconscout.com/illustration/premium/thumb/job-interview-4462381-3702651.png';
 
   return (
-    <div className='font-poppins justify-center items-center flex md:h-screen h-full md:pt-[40px] pt-[80px]'>
+    <div className='font-poppins justify-center items-center flex flex-wrap md:h-screen h-full md:pt-[40px] pt-[80px]'>
         <div className='md:mx-[40px] mx-[20px] md:flex justify-center items-center gap-[30px]'>
             <div>
                 <h1 className='text-jblack text-[44px] font-bold'>Uncover Your Dream Job, Analyze Trends with <span className='text-jgreen text-[44px] font-bold'>Jobbo</span></h1>
