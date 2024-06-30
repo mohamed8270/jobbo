@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SideNavbar from "@/src/components/interface/SideNavbar";
@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   description: "Uncover your perfect job opportunity!",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,13 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
         <div className="flex">
           <SideNavbar/>
           <div className="md:w-full md:ml-[260px]">
             <NavBar/>
             <BottomNavBar/>
-            {children}
+            <main className="flex-grow w-full">{children}</main>
           </div>
         </div>
       </body>
