@@ -8,7 +8,7 @@ const NavBar = () => {
         <nav className='h-[80px] mx-auto flex items-center md:px-[40px] px-[20px] justify-between'>
             <div className='flex justify-start items-center'>
               <div className='md:hidden visible mr-[15px]'>
-                <Link href='/JobsDataPage'><Image src="/assets/icons/menu.svg" alt="menu_svg" width={25} height={25} className='inline-block cursor-pointer text-jblack' /></Link>
+                <Link href='/details'><Image src="/assets/icons/menu.svg" alt="menu_svg" width={25} height={25} className='inline-block cursor-pointer text-jblack' /></Link>
               </div>
               <h1 className='text-jblack md:text-[16px] text-[13px] font-semibold'>Uncover your perfect job opportunity! 💼</h1>
             </div>
