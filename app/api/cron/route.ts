@@ -45,6 +45,9 @@ export async function GET(request: Request) {
                     postedHistory: updatedpostedHistory,
                     appliedHistory: updatedappliedHistory,
                     viewsHistory: updatedviewsHistory,
+                    jobPostedValue: scrapedJob.jobPostedValue,
+                    jobAppliedValue: scrapedJob.jobAppliedValue,
+                    jobViewsValue: scrapedJob.jobViewsValue,
                 };
 
                 // =========== UPDATE THE JOB IN MONGODB
