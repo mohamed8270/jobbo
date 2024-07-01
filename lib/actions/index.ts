@@ -37,11 +37,18 @@ export async function scrapeAndStoreJobData(joburl: string) {
                 {views: scrapedJobData.jobViewsValue}
             ]
 
+            const postedDiff = scrapedJobData.jobPostedValue - existingJob.jobPostedValue;
+            const appliedDiff = scrapedJobData.jobAppliedValue - existingJob.jobAppliedValue;
+            const viewDiff = scrapedJobData.jobViewsValue - existingJob.jobViewsValue;
+
             jobData = {
                 ...scrapedJobData,
                 postedHistory: updatedpostedHistory,
                 appliedHistory: updatedappliedHistory,
                 viewsHistory: updatedviewsHistory,
+                jobPostedValue: existingJob.jobPostedValue + postedDiff,
+                jobAppliedValue: existingJob.jobAppliedValue + appliedDiff,
+                jobViewsValue: existingJob.jobViewsValue + viewDiff,
             }
         }
 
