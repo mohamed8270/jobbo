@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Uncover your perfect job opportunity!",
   generator: "Next.js",
   manifest: "/manifest.json",
-  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
+  keywords: ["Jobbo", "jobbo", "Jobs", "Company", "IT", "Freshers", "PWA", "Work"],
   authors: [
     {
       name: "Mohamed Ibrahim",
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     },
   ],
   icons: [
-    { rel: "apple-touch-icon", url: "icons/icon-128x128.png" },
-    { rel: "icon", url: "icons/icon-128x128.png" },
+    { rel: "apple-touch-icon", sizes:"128x128", url: "/assets/images/jobbo-logo.jpg" },
+    { rel: "icon",sizes:"128x128", url: "/assets/images/jobbo-logo.jpg" },
   ],
 };
 
