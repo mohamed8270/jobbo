@@ -56,8 +56,8 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                         <h1 className='text-[14px] font-light text-jblack'>{job.jobExperience}</h1>
                     </div>
                 </div>
-                <div className='text-jblack py-[10px] text-justify text-[12px] pb-[20px]'>
-                    <div>{job.jobDescription}</div>
+                <div className='py-[10px] pb-[20px]'>
+                    <div className='text-jblack text-[12px]'>{job.jobDescription}</div>
                     <h1 className='text-jblack text-[14px] font-semibold mt-[20px] mb-[10px]'>More Info</h1>
                     <div className='grid md:justify-start sm:justify-between items-center gap-[20px] sm:grid-cols-2 md:grid-cols-3'>
                         <JobDetailsInfoCard icn='https://www.svgrepo.com/show/507547/briefcase-alt.svg' txt1='JOB TYPE' txt2={job.jobType} />

@@ -13,7 +13,7 @@ export const JobsDataCard = ({jobs}: Props) => {
     const img = 'https://www.svgrepo.com/show/495991/building-3.svg';
 
   return (
-    <Link href={`/jobs/${jobs._id}`} className='sm:w-[340px] sm:max-[340px] flex-1 flex flex-col gap-[20px] rounded-lg font-poppins'>
+    <Link href={`/jobs/${jobs._id}`} className='sm:w-[340px] sm:max-[340px] w-full flex-1 flex flex-col gap-[20px] rounded-lg font-poppins'>
         <div className='sm:w-[340px] flex-1 flex flex-col relative gap-[25px] p-[15px] rounded-xl bg-jwhite border-2 border-jsgrey'>
             <div className='flex items-center gap-[10px]'>
                 <Image src={img} alt='company_logo' height={40} width={40}/>
