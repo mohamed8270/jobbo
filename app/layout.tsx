@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   keywords: ["nextjs", "next14", "pwa", "next-pwa"],
   authors: [
     {
-      name: "imvinojanv",
-      url: "https://www.linkedin.com/in/imvinojanv/",
+      name: "Mohamed Ibrahim",
+      url: "https://ibu-ux.web.app/",
     },
   ],
   icons: [
@@ -31,7 +31,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   viewportFit: 'cover',
-  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#fff" }],
+  themeColor: [{ media: "(prefers-color-scheme: light)", color: "#fff" }],
 };
 
 export default function RootLayout({
@@ -41,10 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* <head>
+      <head>
         <meta name="viewport" content="viewport-fit=cover"></meta>
         <link rel="manifest" href="/manifest.json" />
-      </head> */}
+      </head>
       <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
         <div className="flex">
           <SideNavbar/>
