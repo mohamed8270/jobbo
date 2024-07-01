@@ -4,7 +4,7 @@ import { JobsDataCard } from '@/src/components/JobsDataCard';
 import React from 'react'
 
 const page = async () => {
-
+  
   const jobsData = await getAllJobsData();
 
   return (

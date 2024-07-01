@@ -59,6 +59,7 @@ export async function scrapeAndStoreJobData(joburl: string) {
         )
 
         revalidatePath(`/jobs/${newJobData._id}`);
+        revalidatePath(`/details`);
 
         
     } catch (error) {
