@@ -28,15 +28,15 @@ export default function SearchBarRepo() {
   }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit} className='flex justify-between items-center gap-[30px] my-[40px]'>
+    <div className="w-full max-w-2xl mx-auto">
+        <form onSubmit={handleSubmit} className='flex justify-between flex-wrap items-center gap-[30px] my-[40px]'>
             <div className='relative'>
-                <input type="text" placeholder='Get job analytics' value={userJobInput} onChange={(e) => setuserJobInput(e.target.value)} className='bg-jsgrey text-[12px] text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] md:w-[400px] sm:w-[380px] pr-[10px]' />
+                <input type="text" placeholder='Get job analytics' value={userJobInput} onChange={(e) => setuserJobInput(e.target.value)} className='bg-jsgrey text-xs text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] md:w-[400px] sm:w-auto pr-[10px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
                   <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
             </div>
-            <button type='submit' disabled={userJobInput === ''} className='bg-jblack rounded-lg text-[12px] font-poppins font-medium text-jwhite h-[50px] w-[120px]'>{Loading ? 'Loading..' : 'Get a job'}</button>
+            <button type='submit' disabled={userJobInput === ''} className='bg-jblack rounded-lg text-xs font-poppins font-medium text-jwhite h-[50px] min-w-[120px]'>{Loading ? 'Loading..' : 'Get a job'}</button>
         </form>
     </div>
   )
@@ -49,14 +49,14 @@ export function SearchJobsData() {
   const [userJobsData, setuserJobsData] = useState('');
   return  (
     <div>
-        <form className='flex justify-between items-center gap-[30px] my-[40px]'>
+        <form className='flex flex-wrap justify-between items-center gap-[30px] my-[40px]'>
             <div className='relative'>
-                <input type="text" placeholder='Search perfect job' value={userJobsData} onChange={(e) => setuserJobsData(e.target.value)} className='bg-jsgrey text-[12px] text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] lg:w-[900px]' />
+                <input type="text" placeholder='Search perfect job' value={userJobsData} onChange={(e) => setuserJobsData(e.target.value)} className='bg-jsgrey text-xs text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] lg:w-[900px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
                   <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
             </div>
-            <button type='submit' disabled={userJobsData === ''} className='bg-jblack rounded-lg text-[12px] font-poppins font-medium text-jwhite h-[50px] w-[120px]'>Find a Job</button>
+            <button type='submit' disabled={userJobsData === ''} className='bg-jblack rounded-lg text-xs font-poppins font-medium text-jwhite h-[50px] w-[120px]'>Find a Job</button>
         </form>
     </div>
   )

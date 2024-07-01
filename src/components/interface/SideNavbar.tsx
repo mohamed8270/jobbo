@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const SideNavbar = () => {
     const pathname = usePathname();
-    const imglink = 'https://img.freepik.com/premium-vector/leaf-nature-logo-concept-template_535345-155.jpg';
+    const imglink = 'https://st2.depositphotos.com/5142301/7567/v/450/depositphotos_75676029-stock-illustration-abstract-sphere-eco-green-logo.jpg';
   return (
     <div className='bg-jwhite font-poppins h-screen top-0 left-0 fixed w-[260px] border-r-[2px] border-jsgrey invisible md:visible'>
         <div className='flex flex-col py-[20px] px-[30px]'>
