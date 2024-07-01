@@ -29,14 +29,14 @@ export default function SearchBarRepo() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-        <form onSubmit={handleSubmit} className='flex sm:flex-col justify-between flex-wrap items-center gap-[30px] my-[40px]'>
-            <div className='relative'>
-                <input type="text" placeholder='Get job analytics' value={userJobInput} onChange={(e) => setuserJobInput(e.target.value)} className='bg-jsgrey text-xs text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] md:w-[400px] sm:w-auto pr-[10px]' />
+        <form onSubmit={handleSubmit} className='flex justify-between flex-wrap items-center gap-[30px] my-[40px]'>
+            <div className='relative flex-grow'>
+                <input type="text" placeholder='Get job analytics' value={userJobInput} onChange={(e) => setuserJobInput(e.target.value)} className='bg-jsgrey text-xs text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] w-full pr-[10px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
                   <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
             </div>
-            <button type='submit' disabled={userJobInput === ''} className='bg-jblack rounded-lg text-xs font-poppins font-medium text-jwhite h-[50px] min-w-[120px]'>{Loading ? 'Loading..' : 'Get a job'}</button>
+            <button type='submit' disabled={userJobInput === ''} className='bg-jblack rounded-lg text-xs font-poppins font-medium text-jwhite h-[50px] min-w-[120px] whitespace-nowrap'>{Loading ? 'Loading..' : 'Get a job'}</button>
         </form>
     </div>
   )

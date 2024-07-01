@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const NavBar = () => {
   return (
-    <header className='md:top-0 md:left-[260px] md:right-0 font-poppins bg-jwhite border-b-[2px] border-jsgrey fixed w-full h-[65px]'>
+    <header className='md:top-0 md:left-[260px] md:right-0 font-poppins bg-jwhite border-b-[2px] border-jsgrey fixed w-full'>
         <nav className='h-[80px] mx-auto flex items-center md:px-[40px] px-[10px] justify-between'>
             <div className='flex justify-start items-center'>
               <div className='md:hidden visible mr-[15px]'>
