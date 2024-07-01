@@ -36,7 +36,7 @@ export default function SearchBarRepo() {
                   <Image src="/assets/icons/search.svg" alt="search_svg" width={20} height={20} />
                 </div>
             </div>
-            <button type='submit' disabled={userJobInput === ''} className='bg-jblack rounded-lg text-xs font-poppins font-medium text-jwhite h-[50px] px-4 whitespace-nowrap'>{Loading ? 'Loading..' : 'Get a job'}</button>
+            <button type='submit' disabled={userJobInput === ''} className={`rounded-lg text-xs font-poppins font-medium text-jwhite h-[50px] px-4 whitespace-nowrap ${Loading ? 'bg-jgreen' : 'bg-jblack'}`}>{Loading ? 'Loading' : 'Get a job'}</button>
         </form>
     </div>
   )

@@ -9,6 +9,7 @@ import WelComeMailModal from '@/src/components/modals/WelMailModal';
 import { JobDetailsInfoCard, JobDetailsInfoSkills } from '@/src/components/interface/JobDetailsInfoCard';
 import { extractPopularity } from '@/lib/utils/jobs_analytics';
 import { JobpopularityAnalytics } from '@/src/components/JobsAnalyticsCard';
+import { descriptionCheck } from '@/src/utils/check_utils';
 
 type Props = {
     params: {id: string},
@@ -57,7 +58,7 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     </div>
                 </div>
                 <div className='py-[10px] pb-[20px]'>
-                    <div className='text-jblack text-[12px]'>{job.jobDescription}</div>
+                    <div className={`text-jblack text-[12px] ${descriptionCheck(job.jobDescription)}`}>{job.jobDescription}</div>
                     <h1 className='text-jblack text-[14px] font-semibold mt-[20px] mb-[10px]'>More Info</h1>
                     <div className='grid md:justify-start sm:justify-between items-center gap-[20px] sm:grid-cols-2 md:grid-cols-3'>
                         <JobDetailsInfoCard icn='https://www.svgrepo.com/show/507547/briefcase-alt.svg' txt1='JOB TYPE' txt2={job.jobType} />
