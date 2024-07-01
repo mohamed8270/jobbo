@@ -39,21 +39,26 @@ export async function GET(request: Request) {
                     ...currentJob.viewsHistory,
                     {views: scrapedJob.jobViewsValue}
                 ]
+
+                const postedDiff = scrapedJob.jobPostedValue - currentJob.jobPostedValue;
+                const appliedDiff = scrapedJob.jobAppliedValue - currentJob.jobAppliedValue;
+                const viewDiff = scrapedJob.jobViewsValue - currentJob.jobViewsValue;
     
                 const jobData = {
                     ...scrapedJob,
                     postedHistory: updatedpostedHistory,
                     appliedHistory: updatedappliedHistory,
                     viewsHistory: updatedviewsHistory,
-                    jobPostedValue: scrapedJob.jobPostedValue,
-                    jobAppliedValue: scrapedJob.jobAppliedValue,
-                    jobViewsValue: scrapedJob.jobViewsValue,
+                    jobPostedValue: currentJob.jobPostedValue + postedDiff,
+                    jobAppliedValue: currentJob.jobAppliedValue + appliedDiff,
+                    jobViewsValue: currentJob.jobViewsValue + viewDiff,
                 };
 
                 // =========== UPDATE THE JOB IN MONGODB
                 const updatedJob = await JobModel.findOneAndUpdate(
                     {url: jobData.url},
                     jobData,
+                    {new: true},
                 );
 
                 //============ 2 CHECK EACH JOB DATA AND SEND MAIL
