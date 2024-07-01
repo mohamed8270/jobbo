@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     },
   ],
   icons: [
-    { rel: "apple-touch-icon", url: "/assets/images/jobbo-logo.jpg" },
-    { rel: "icon", url: "/assets/images/jobbo-logo.jpg" },
+    { rel: "apple-touch-icon", url: "icons/icon-128x128.png" },
+    { rel: "icon", url: "icons/icon-128x128.png" },
   ],
 };
 
