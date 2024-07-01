@@ -6,7 +6,7 @@ const HeroSection = () => {
 
   return (
     <div className='font-poppins justify-center items-center flex flex-wrap md:h-screen h-full md:pt-[40px] pt-[80px]'>
-        <div className='md:mx-[40px] mx-[20px] md:flex justify-center items-center gap-[30px]'>
+        <div className='md:px-[40px] px-[10px] md:flex justify-center items-center gap-[30px]'>
             <div>
                 <h1 className='text-jblack text-[44px] font-bold'>Uncover Your Dream Job, Analyze Trends with <span className='text-jgreen text-[44px] font-bold'>Jobbo</span></h1>
                 <p className='text-jblack opacity-50 text-[14px] font-light my-[10px] leading-6'>Discover the hottest jobs in your industry or desired field. Jobbo analyzes job postings across various platforms to identify the most sought-after positions and equip you with the knowledge to make informed career choices.</p>
