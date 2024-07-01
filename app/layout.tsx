@@ -10,6 +10,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Jobbo",
   description: "Uncover your perfect job opportunity!",
+  generator: "Next.js",
+  manifest: "/manifest.json",
+  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
+  authors: [
+    {
+      name: "imvinojanv",
+      url: "https://www.linkedin.com/in/imvinojanv/",
+    },
+  ],
+  icons: [
+    { rel: "apple-touch-icon", url: "/assets/images/jobbo-logo.jpg" },
+    { rel: "icon", url: "/assets/images/jobbo-logo.jpg" },
+  ],
 };
 
 export const viewport: Viewport = {
@@ -18,6 +31,7 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   viewportFit: 'cover',
+  themeColor: [{ media: "(prefers-color-scheme: dark)", color: "#fff" }],
 };
 
 export default function RootLayout({
@@ -27,10 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <meta name="viewport" content="viewport-fit=cover"></meta>
         <link rel="manifest" href="/manifest.json" />
-      </head>
+      </head> */}
       <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
         <div className="flex">
           <SideNavbar/>
