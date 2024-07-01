@@ -17,6 +17,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  viewportFit: 'cover',
 };
 
 export default function RootLayout({
@@ -26,6 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="viewport-fit=cover"></meta>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
       <body className={`${inter.className} min-h-screen overflow-x-hidden`}>
         <div className="flex">
           <SideNavbar/>
