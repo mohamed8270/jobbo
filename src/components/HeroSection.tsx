@@ -5,15 +5,15 @@ const HeroSection = () => {
     const img = 'https://cdni.iconscout.com/illustration/premium/thumb/job-interview-4462381-3702651.png';
 
   return (
-    <div className='font-poppins justify-center items-center flex flex-wrap md:h-screen h-full md:pt-[40px] pt-[80px] mx-auto'>
-        <div className='md:px-[40px] px-[10px] md:flex justify-center items-center gap-[30px]'>
-            <div>
+    <div className='font-poppins justify-center items-center flex flex-wrap min-h-screen md:pt-[40px] pt-[50px]'>
+        <div className='md:px-[40px] px-[10px] md:flex justify-center md:justify-between items-center gap-[30px]  max-w-7xl w-full'>
+            <div className='md:w-1/2 mb-8 md:mb-0'>
                 <h1 className='text-jblack text-[44px] font-bold'>Uncover Your Dream Job, Analyze Trends with <span className='text-jgreen text-[44px] font-bold'>Jobbo</span></h1>
                 <p className='text-jblack opacity-50 text-[14px] font-light my-[10px] leading-6'>Discover the hottest jobs in your industry or desired field. Jobbo analyzes job postings across various platforms to identify the most sought-after positions and equip you with the knowledge to make informed career choices.</p>
                 <SearchBarRepo/>
             </div>
             <div >
-                <img src={img} alt="heroimage" height={1800} width={1800}/>
+                <img src={img} alt="heroimage"  className='w-full h-auto max-w-md mx-auto'/>
             </div>
         </div>
     </div>
