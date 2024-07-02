@@ -40,6 +40,7 @@ export async function scrapeAndStoreJobData(joburl: string) {
             const postedDiff = scrapedJobData.jobPostedValue - existingJob.jobPostedValue;
             const appliedDiff = scrapedJobData.jobAppliedValue - existingJob.jobAppliedValue;
             const viewDiff = scrapedJobData.jobViewsValue - existingJob.jobViewsValue;
+            console.log(postedDiff, appliedDiff, viewDiff);
 
             jobData = {
                 ...scrapedJobData,
