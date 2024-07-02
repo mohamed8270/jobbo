@@ -5,7 +5,7 @@ import { scrapeJobData } from "@/lib/scraper";
 import { getEmailNotifyType } from "@/lib/utils/email";
 import { NextResponse } from "next/server";
 
-export const maxDuration = 10;
+export const maxDuration = 60;
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
