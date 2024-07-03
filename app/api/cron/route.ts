@@ -58,7 +58,6 @@ export async function GET(request: Request) {
                 const updatedJob = await JobModel.findOneAndUpdate(
                     {url: jobData.url},
                     jobData,
-                    {new: true},
                 );
 
                 //============ 2 CHECK EACH JOB DATA AND SEND MAIL
