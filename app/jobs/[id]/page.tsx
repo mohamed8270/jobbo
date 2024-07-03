@@ -29,8 +29,8 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                 <div className='flex justify-start items-center gap-[20px]'>
                     <Image src={img} alt='logo' height={80} width={80}/>
                     <div>
-                        <h1 className='lg:text-[42px] text-jblack font-normal'>{job.jobName}</h1>
-                        <Link href={job.jobCompanyUrl} className='text-[14px] font-normal text-jblack text-opacity-40 hover:underline'>{job.jobCompany === '' ? 'Company Name Confidential' : job.jobCompany}</Link>
+                        <h1 className='lg:text-[42px] text-jblack lg:font-normal font-semibold'>{job.jobName}</h1>
+                        <Link href={job.jobCompanyUrl} className='lg:text-[14px] text-xs font-normal text-jblack text-opacity-40 hover:underline'>{job.jobCompany === '' ? 'Company Name Confidential' : job.jobCompany}</Link>
                     </div>
                 </div>
                 <div className='flex gap-[20px]'>
@@ -42,19 +42,19 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
             <div className='mt-[40px] lg:mx-[40px] mx-[10px]'>
                 <div className='flex items-center gap-[10px] my-[10px]'>
                     <div className='h-[30px] w-[5px] bg-jgreen rounded-r-md'></div>
-                    <h1 className='text-[16px] font-light text-jgreen'>$ {job.jobSalary === '' ? 'Not specified' : job.jobSalary} <span className='text-[12px] font-light text-jblack text-opacity-40'>/per annum</span></h1>
+                    <h1 className='text-[16px] font-light text-jgreen'>₹ {job.jobSalary === '' ? 'Not specified' : job.jobSalary} <span className='text-[12px] font-light text-jblack text-opacity-40'>/per annum</span></h1>
                 </div>
                 <JobsInfoCard txt1={job.jobPosted} txt2={job.jobViews} txt3={job.jobApplied} style='gap-4' />
                 <JobpopularityAnalytics txt={extractPopularity(job)} quickapply={job.jobQuickApply}/>
                 <div className='mt-[30px] flex gap-[10px] items-center'>
                     <div className='flex gap-[10px]'>
-                        <Image src='https://www.svgrepo.com/show/532539/location-pin.svg' alt='location' height={15} width={15}/>
-                        <h1 className='text-[14px] font-light text-jblack'>{job.jobPlace}</h1>
+                        <Image src='https://www.svgrepo.com/show/532539/location-pin.svg' alt='location' height={17} width={17}/>
+                        <h1 className='text-[14px] font-medium text-jblack'>{job.jobPlace}</h1>
                     </div>
                     <div className='h-[20px] w-[1.5px] bg-jblack opacity-10 rounded-md'></div>
                     <div className='flex gap-[10px]'>
-                        <Image src='https://www.svgrepo.com/show/507547/briefcase-alt.svg' alt='location' height={15} width={15}/>
-                        <h1 className='text-[14px] font-light text-jblack'>{job.jobExperience}</h1>
+                        <Image src='https://www.svgrepo.com/show/507547/briefcase-alt.svg' alt='location' height={17} width={17}/>
+                        <h1 className='text-[14px] font-medium text-jblack'>{job.jobExperience}</h1>
                     </div>
                 </div>
                 <div className='py-[10px] pb-[20px]'>
@@ -72,8 +72,8 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
                     <div className='h-[2px] w-auto bg-jsgrey'></div>
                     <div className='flex justify-between items-center py-[20px]'>
                         <div className='flex-row justify-start items-center'>
-                            <Link href={job.jobCompanyUrl} ><div className='text-jgreen text-[14px] font-medium my-[10px]'><span className='text-jblack text-[14px] font-medium'>About</span>  {job.jobCompany === '' ? 'Confidential' : job.jobCompany}</div></Link>
-                            <Link href={job.jobSource === '' ? job.jobCompanyUrl : job.jobSource}><div className='text-jgreen text-[12px] font-medium'><span className='text-jblack text-[12px] font-medium'>Source:</span>  {job.jobSource === '' ? 'Visit official' : job.jobSource}</div></Link>
+                            <Link href={job.jobCompanyUrl} ><div className='text-jgreen md:text-[14px] text-xs font-medium my-[10px]'><span className='text-jblack md:text-[14px] text-xs font-medium'>About</span>  {job.jobCompany === '' ? 'Confidential' : job.jobCompany}</div></Link>
+                            <Link href={job.jobSource === '' ? job.jobCompanyUrl : job.jobSource}><div className='text-jgreen md:text-[12px] text-xs font-medium'><span className='text-jblack md:text-[12px] text-xs font-medium'>Source:</span>  {job.jobSource === '' ? 'Visit official' : job.jobSource}</div></Link>
                         </div>
                         <div>
                             <button className='font-poppins h-[40px] w-[120px]  text-jgreen text-[12px] font-medium rounded-lg hover:text-jwhite border-2 border-jgreen hover:bg-jgreen'>Follow</button>
