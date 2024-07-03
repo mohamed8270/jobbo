@@ -45,7 +45,7 @@ export async function generateEmailBody(job: EmailJobInfo, type: NotificationTyp
             break;
 
         case Notification.VIEWS:
-            subject = `${shortenedTitle} high on reels 😎`;
+            subject = `${shortenedTitle} high on views 😎`;
             body = viewsContent;
             break;
 
