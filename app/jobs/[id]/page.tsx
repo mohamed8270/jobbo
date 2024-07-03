@@ -27,13 +27,13 @@ const JobsDetailsPage = async ({params: {id}}: Props) => {
         <div className='pt-[100px]'>
             <div className='lg:flex justify-between items-center sticky top-5 bg-jwhite lg:px-[40px] px-[10px]'>
                 <div className='flex justify-start items-center gap-[20px]'>
-                    <Image src={img} alt='logo' height={80} width={80}/>
+                    <img src={img} alt='logo' className='md:w-[80px] w-[50px] h-[50px] md:h-[80px]'/>
                     <div>
                         <h1 className='lg:text-[42px] text-jblack lg:font-normal font-semibold'>{job.jobName}</h1>
                         <Link href={job.jobCompanyUrl} className='lg:text-[14px] text-xs font-normal text-jblack text-opacity-40 hover:underline'>{job.jobCompany === '' ? 'Company Name Confidential' : job.jobCompany}</Link>
                     </div>
                 </div>
-                <div className='flex gap-[20px]'>
+                <div className='flex gap-[20px] md:py-[0px] py-[10px]'>
                     {/* <button className='font-poppins h-[40px] w-[120px]  text-jblack text-[12px] font-medium rounded-lg hover:text-jblack border-2 border-jsgrey hover:bg-jsgrey'>🔔  Get Notified</button> */}
                     <WelComeMailModal jobId={id} />
                     <Link href={job.jobApply}><button className='font-poppins h-[40px] w-[100px] bg-jgreen text-jwhite text-[12px] font-medium rounded-lg hover:text-jgreen hover:border-2 hover:border-jgreen hover:bg-jwhite'>Apply Now</button></Link>

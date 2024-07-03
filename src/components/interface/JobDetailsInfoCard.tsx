@@ -12,7 +12,7 @@ export function JobDetailsInfoSkills({icn, txt1, txt2}: Props) {
     <div className='h-auto w-auto bg-jsgrey bg-opacity-50 justify-start items-center flex-row gap-[10px] rounded-lg p-[10px]'>
         <div className='flex items-center gap-[10px] my-[5px]'>
             <Image src={icn} alt={txt1} height={17} width={17} />
-            <h1 className='text-[12px] font-medium text-jblack text-opacity-40'>{txt1}</h1>
+            <h1 className='text-[12px] font-normal text-jblack text-opacity-40'>{txt1}</h1>
         </div>
         <div className='w-auto overflow-x-auto no-scrollbar flex flex-wrap'>
             {txt2.map((data: any) => (
@@ -30,7 +30,7 @@ export function JobDetailsInfoCard({icn, txt1, txt2}: Props) {
       <div className='h-auto w-auto bg-jsgrey bg-opacity-50 justify-start items-center flex-row gap-[10px] rounded-lg p-[10px]'>
           <div className='flex items-center gap-[10px] my-[8px]'>
               <Image src={icn} alt={txt1} height={17} width={17} />
-              <h1 className='text-[12px] font-medium text-jblack text-opacity-40'>{txt1}</h1>
+              <h1 className='text-[12px] font-normal text-jblack text-opacity-40'>{txt1}</h1>
           </div>
           <h1 className='lg:text-[12px] text-xs font-medium text-jblack'>{txt2}</h1>
       </div>
