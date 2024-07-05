@@ -29,7 +29,7 @@ export default function SearchBarRepo() {
 
   return (
     <div className="w-full max-w-2xl mx-auto">
-        <form onSubmit={handleSubmit} className='flex flex-grow justify-between flex-wrap items-center gap-[10px] my-[20px] md:my-[40px]'>
+        <form onSubmit={handleSubmit} className='flex flex-grow justify-between items-center gap-[10px] my-[20px] md:my-[40px]'>
             <div className='relative flex-grow'>
                 <input type="text" placeholder='Get job analytics' value={userJobInput} onChange={(e) => setuserJobInput(e.target.value)} className='bg-jsgrey text-xs text-jblack font-normal font-poppins outline-none rounded-lg pl-[40px] h-[50px] w-full pr-[10px]' />
                 <div className='absolute flex items-center inset-y-0 left-0 pointer-events-none pl-[10px]'>
