@@ -14,3 +14,8 @@ export const bottomNavLinks = [
     {path: '/scope', svg: '/assets/icons/scope-outline.svg', svgfil:'/assets/icons/scope-filled.svg', text: 'Scope'},
     {path: '/settings', svg: '/assets/icons/settings-outline.svg', svgfil:'/assets/icons/settings-filled.svg', text: 'Settings'},
 ];
+
+export const preferencesLinks = [
+    {path: '/support', svg: '/assets/icons/support-outline.svg', alt: 'support-icon', text: 'Support Center'},
+    {path: '/about', svg: '/assets/icons/about-outline.svg', alt: 'about-icon', text: 'About'},
+];
