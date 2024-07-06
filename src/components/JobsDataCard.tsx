@@ -19,7 +19,7 @@ export const JobsDataCard = ({jobs}: Props) => {
                 <Image src={img} alt='company_logo' height={40} width={40}/>
                 <div className='flex flex-col gap-[2px]'>
                     <h1 className='font-poppins text-[18px] font-semibold text-jblack line-clamp-1'>{jobs.jobName}</h1>
-                    <p className='font-poppins md:text-[12px] text-xs font-medium text-jblack opacity-40 line-clamp-1'>{jobs.jobCompany === '' ? 'Company Name Confidential' : jobs.jobCompany}</p>
+                    <p className='font-poppins text-xs font-normal text-jblack opacity-40 line-clamp-1'>{jobs.jobCompany === '' ? 'Company Name Confidential' : jobs.jobCompany}</p>
                 </div>
             </div>
             <JobsInfoCard txt1={jobs.jobPosted} txt2={jobs.jobViews} txt3={jobs.jobApplied} style='justify-between' />

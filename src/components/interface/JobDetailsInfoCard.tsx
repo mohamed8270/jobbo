@@ -16,8 +16,8 @@ export function JobDetailsInfoSkills({icn, txt1, txt2}: Props) {
         </div>
         <div className='w-auto overflow-x-auto no-scrollbar flex flex-wrap'>
             {txt2.map((data: any) => (
-                <div className='h-auto w-auto bg-jwhite rounded-lg flex-wrap items-center justify-center m-[5px]'>
-                    <h1 className='h-auto w-auto p-[10px] text-jblack font-medium lg:text-[12px] text-xs'>{data}</h1>
+                <div className='h-auto w-auto bg-jwhite rounded-lg flex-wrap items-center justify-center m-[2px]'>
+                    <h1 className='h-auto w-auto p-[10px] text-jblack font-medium text-xs'>{data}</h1>
                 </div>
             ))}
         </div>
